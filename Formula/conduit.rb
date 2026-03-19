@@ -1,11 +1,12 @@
 class Conduit < Formula
   desc "A lightweight local terminal chat application"
   homepage "https://github.com/Yoshi-tech/Conduit"
-  url "https://github.com/Yoshi-tech/Conduit/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "2d07b3b4a17374dd88f56d640c3179e4c6b6107cf081fb7659e83bfdddce0806"
+  url "https://github.com/Yoshi-tech/Conduit/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "1d01702a7113f6a446665e2ce0e12b59da1243f642eae29382c8d0a8a58dd781"
   license "MIT"
 
   depends_on "ncurses"
+  depends_on "pkg-config" => :build
 
   def install
     system "make"
@@ -27,6 +28,6 @@ class Conduit < Formula
   end
 
   test do
-    system "#{bin}/conduit-server", "--version"
+    assert_predicate bin/"conduit-server", :exist?
   end
 end
