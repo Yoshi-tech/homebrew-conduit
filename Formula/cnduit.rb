@@ -1,4 +1,4 @@
-class Conduit < Formula
+class Cnduit < Formula
   desc "A lightweight local terminal chat application"
   homepage "https://github.com/Yoshi-tech/Conduit"
   url "https://github.com/Yoshi-tech/Conduit/archive/refs/tags/v1.0.1.tar.gz"
@@ -10,17 +10,17 @@ class Conduit < Formula
 
   def install
     system "make"
-    bin.install "chatServer" => "conduit-server"
-    bin.install "chatClient" => "conduit"
+    bin.install "chatServer" => "cnduit-server"
+    bin.install "chatClient" => "cnduit"
   end
 
   def caveats
     <<~EOS
       To start a chat server:
-        conduit-server
+        cnduit-server
 
       To join a chat:
-        conduit <hostname>
+        cnduit <hostname>
 
       Find your hostname with:
         hostname
@@ -28,6 +28,6 @@ class Conduit < Formula
   end
 
   test do
-    assert_predicate bin/"conduit-server", :exist?
+    assert_predicate bin/"cnduit-server", :exist?
   end
 end
